@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Prestige Academic Navy & Gold Palette */
+  --navy-main: #13296b;
+  --navy-dark: #0b1a47;
+  --navy-subtle: #eef4fb;
+  --navy-gradient: linear-gradient(135deg, #06112e 0%, #0d2050 35%, #132a68 70%, #1a3880 100%);
+
+  --gold-main: #c8952c;
+  --gold-bright: #e9c46a;
+  --gold-bronze: #9a6b17;
+  --gold-gradient: linear-gradient(90deg, #9a6b17 0%, #e9c46a 50%, #c8952c 100%);
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-main: #1c2233;
+  --text-muted: #5f6678;
+  --border-divider: #d5dbe6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-navy-main: #13296b;
+  --color-navy-dark: #0b1a47;
+  --color-navy-subtle: #eef4fb;
+  --color-gold-main: #c8952c;
+  --color-gold-bright: #e9c46a;
+  --color-gold-bronze: #9a6b17;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-text-main: #1c2233;
+  --color-text-muted: #5f6678;
+  --color-border-divider: #d5dbe6;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Gradients and Specialty Utilities */
+.bg-navy-dark-banner {
+  background: linear-gradient(135deg, #06112e 0%, #0d2050 35%, #132a68 70%, #1a3880 100%);
+}
+
+.bg-gold-bar {
+  background: linear-gradient(90deg, #9a6b17 0%, #e9c46a 50%, #c8952c 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(90deg, #c8952c 0%, #e9c46a 50%, #c8952c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-academic {
+  background-color: #eef4fb;
+  color: #13296b;
+  border: 1px solid #d5dbe6;
+}
+
+.badge-gold {
+  background-color: rgba(200, 149, 44, 0.12);
+  color: #9a6b17;
+  border: 1px solid #c8952c;
+}
+
+.border-academic {
+  border-color: #d5dbe6;
+}
+
+.border-gold {
+  border-color: #c8952c;
+}
+
+/* Watermark Text Background (PDF Style) */
+.watermark-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(19, 41, 107, 0.04);
+  user-select: none;
+  pointer-events: none;
+}
+
+.watermark-text-dark {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(233, 196, 106, 0.05);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Technical Callout Boxes (PDF Page 6-7 Style) */
+.callout-box {
+  background-color: rgba(11, 26, 71, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid #c8952c;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+/* Monospace technical labels */
+.tech-font {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #13296b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c8952c;
 }
